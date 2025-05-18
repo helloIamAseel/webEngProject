@@ -1,3 +1,4 @@
+//header
 function loadHeader() {
   fetch("header.html")
     .then(response => response.text())
@@ -11,48 +12,57 @@ function loadHeader() {
         if (link.getAttribute("href") === currentPage) {
           link.classList.add("active");
         }
-        });
+      });
     });
 }
 
 document.addEventListener("DOMContentLoaded", loadHeader);
 
-/**
- * Call loadHeader()
+//searching
+document.addEventListener("DOMContentLoaded", () => {
+  // 1) Your hard-coded recipe list:
+  const recipes = [
+    { title: "Berry Yogurt Smoothie"},
+    { title: "Mint Lemon Drink"},
+    { title: "Chickpea Curry"},
+    { title: "Backed chicken Tenders"},
+    { title: "French Toast"},
+    { title: "Cucumber Yogurt Dip"}
+  ];
 
-This starts the function.
+  // 2) If we’re on the search page (has #searchInput), wire up the live‐search:
+  const searchInput = document.getElementById("searchInput");
+  const resultsDiv  = document.getElementById("results");
+  if (searchInput && resultsDiv) {
+    function searchRecipes() {
+      const q = searchInput.value.toLowerCase(); //what user is typing
+      const matches = recipes.filter(r => r.title.toLowerCase().includes(q)); //recipes array
+      resultsDiv.innerHTML = "";
 
-fetch("header.html")
+      if (matches.length === 0) {
+        resultsDiv.innerHTML = "<p>No results found.</p>";
+      } else {
+        matches.forEach(r => {
+          // instead of a div, make this an <a> that links to recipes.html?title=…
+          const link = document.createElement("a");
+          link.href = `recipes1.html?title=${encodeURIComponent(r.title)}`;
+          link.innerHTML = `<h3>${r.title}</h3>`;
+          link.style.display = "block";   // behave like a card
+          resultsDiv.appendChild(link);
+        });
+      }
+    }
 
-The browser sends a request to get the header.html file (like copy-pasting its contents).
+    // wire it up
+    searchInput.addEventListener("input", searchRecipes);
+  }
 
-This is asynchronous — it doesn’t block other code from running.
+  // 3) If we’re on recipes.html (has #recipeContainer), read the URL and render that one recipe:
+  const recipeContainer = document.getElementById("recipeContainer");
+  if (recipeContainer) {
+    const params = new URLSearchParams(window.location.search);
+    const sel    = params.get("title");       // e.g. "Pasta"
+    const recipe = recipes.find(r => r.title === sel);
+  }
+});
 
-.then(response => response.text())
-
-When the fetch succeeds, it gives you a response object.
-
-.text() reads the contents of header.html as plain text (not JSON or anything else).
-
-.then(data => {...})
-
-When the text is ready, this function runs.
-
-data now holds the actual HTML content from header.html.
-
-document.getElementById("header-placeholder")
-
-Finds the <div> in your HTML with that ID.
-
-Example:
-
-html
-Copy code
-<div id="header-placeholder"></div>
-.innerHTML = data
-
-Puts the HTML content from header.html inside the <div>.
-
-It’s like you manually wrote it there.
- * 
- */
