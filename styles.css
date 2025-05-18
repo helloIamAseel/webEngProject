@@ -1,0 +1,38 @@
+body {
+    background: #ffeaad;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background: rgb(165, 77, 42);
+    text-align: center;
+    font-size: 20px;
+    width: 100%;
+    padding: 3px;
+}
+
+nav a {
+  color: white;
+  margin-right: 20px;
+  text-decoration: none;
+  font-size: 18px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.currLink {
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.currLink.active {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+section {
+    padding-left: 20px;
+}

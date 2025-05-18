@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <title>Add recipes</title>
+  </head>
+
+  <body>
+    <div id="forHeader"></div> 
+     
+      <h1>Add a New Recipe</h1>
+
+  <form method="POST">
+
+    <section>
+      <h2>Recipe Name</h2>
+      <p>
+        <label for="recipeName">Enter the recipe title:</label><br>
+        <input type="text" id="recipeName" name="recipeName" placeholder="e.g. Spaghetti Bolognese" required>
+      </p>
+    </section>
+
+    <section>
+      <h2>Ingredients</h2>
+      <p>
+        <label for="ingredients">List all ingredients with quantity and units:</label><br>
+        <textarea id="ingredients" name="ingredients" rows="5" cols="100" placeholder="e.g. 1 cup flour, 2 eggs..." required></textarea>
+      </p>
+    </section>
+
+    <section>
+      <h2>Instructions</h2>
+      <p>
+        <label for="instructions">Write the preparation steps clearly:</label><br>
+        <textarea id="instructions" name="instructions" rows="5" cols="100" placeholder="Step-by-step instructions..." required></textarea>
+      </p>
+    </section>
+
+    <section>
+      <h2>Notes & Preferences</h2>
+      <p>
+        <label for="notes">Optional notes or tips from the cook:</label><br>
+        <textarea id="notes" name="notes" rows="5" cols="100" placeholder="e.g. Serve with lemon slices or refrigerate overnight"></textarea>
+      </p>
+    </section>
+
+      <p>
+  <input type="submit" value="Send Recipe">
+  <input type="reset" value="Clear All Fields">
+      </p>
+
+  </form>
+  </body>
+
+</html>
