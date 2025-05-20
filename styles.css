@@ -24,6 +24,13 @@ nav a {
   padding-right: 50px;
 }
 
+img{
+   display: block;
+   margin: 0 auto;
+   border: 3px solid rgb(165, 77, 42);
+   border-radius: 3px;
+}
+
 .currLink {
   text-decoration: none;
   margin-right: 15px;
@@ -35,11 +42,23 @@ nav a {
 }
 
  section{
-    width: 50%;
+    width: 50%; 
     border: 2px solid rgb(165, 77, 42);
-    margin-bottom: 5px;
-    margin-left: 5px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    margin-left: 25%; 
     padding-left: 15px;
+    padding-bottom: 15px;
+  }
+
+  h1{
+    padding-left: 15px;
+    margin-left: 25%;
+  }
+
+  h3{
+    padding-left: 15px;
+    margin-left: 25%;
   }
 
   .recipe-content {
@@ -63,7 +82,7 @@ nav a {
   background-color: #a54d2a;
   color: white;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 3px;
   font-size: 16px;
 }
 .Abutton:hover {

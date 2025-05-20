@@ -3,20 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <title>Register to Recipes Organizer</title>
   </head>
 <style>
-  h1{
-    padding-left: 15px;
-  }
+
 </style>
   <body>
     <div id="forHeader"></div> 
      
       <h1>Create Your Account</h1>
 
-  <form method="POST">
+  <form id="regForm">
 
     <section>
       <label for="username">Username:</label><br>
@@ -43,6 +41,8 @@
           </p>
 
   </form>
+      <p id="errorMessage"></p>
+
   </body>
 
 </html>

@@ -66,3 +66,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+
+  const form = document.getElementById('regForm');
+  const password = document.getElementById('password');
+  const confirmPassword = document.getElementById('confirmPassword');
+  const errorMsg = document.getElementById('errorMessage');
+
+  form.addEventListener('submit', function (e) {
+    if (password.value !== confirmPassword.value) {
+      e.preventDefault(); // Stop the form from submitting
+      errorMsg.textContent = 'Passwords do not match.';
+      errorMsg.style.color = 'red';
+    } else {
+      errorMsg.textContent = 'Account created!';
+    }
+  });
+
+
