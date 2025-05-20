@@ -21,14 +21,19 @@ document.addEventListener("DOMContentLoaded", loadHeader);
 //searching
 document.addEventListener("DOMContentLoaded", () => {
   // 1) Your hard-coded recipe list:
-  const recipes = [
-    { title: "Berry Yogurt Smoothie"},
-    { title: "Mint Lemon Drink"},
-    { title: "Chickpea Curry"},
-    { title: "Backed chicken Tenders"},
-    { title: "French Toast"},
-    { title: "Cucumber Yogurt Dip"}
-  ];
+const recipes = [
+  { title: "Spaghetti Bolognese" },
+  { title: "Buttermilk Pancakes" },
+  { title: "Crisp Garden Salad" },
+  { title: "Hearty Chicken Soup" },
+  { title: "Golden Grilled Cheese" },
+  { title: "Berry Yogurt Smoothie" },
+  { title: "Mint Lemon Drink" },
+  { title: "Chickpea Curry" },
+  { title: "Baked Chicken Tenders" },
+  { title: "French Toast" },
+  { title: "Cucumber Yogurt Dip" }
+];
 
   // 2) If we’re on the search page (has #searchInput), wire up the live‐search:
   const searchInput = document.getElementById("searchInput");
