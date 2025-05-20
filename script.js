@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function searchRecipes() {
       const q = searchInput.value.toLowerCase(); //what user is typing
       const matches = recipes.filter(r => r.title.toLowerCase().includes(q)); //recipes array
-      resultsDiv.innerHTML = "";
+      resultsDiv.innerHTML = ""; //clears search bar
 
       if (matches.length === 0) {
         resultsDiv.innerHTML = "<p>No results found.</p>";

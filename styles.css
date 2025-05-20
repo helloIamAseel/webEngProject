@@ -33,6 +33,10 @@ nav a {
   font-weight: bold;
 }
 
-section {
-  padding-left: 20px;
-}
+ section{
+    width: 50%;
+    border: 2px solid rgb(165, 77, 42);
+    margin-bottom: 5px;
+    margin-left: 5px;
+    padding-left: 15px;
+  }
